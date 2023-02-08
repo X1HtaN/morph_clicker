@@ -24,8 +24,17 @@ def get_money():
         cur = con.cursor()
 
         cur.execute("""SELECT money FROM resources""")
-        for i in cur:
-            return i[0]
+
+    for i in cur:
+        return i[0]
+
+def get_multiply():
+    with sq.connect("data.db") as con:
+        cur = con.cursor()
+
+        cur.execute("""SELECT multiply FROM resources""")
+    for i in cur:
+        return i[0]
 
 # def test():
 #     with sq.connect("data.db") as con:

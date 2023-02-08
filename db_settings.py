@@ -1,4 +1,5 @@
 import sqlite3 as sq
+import engine
 
 def create_db():
     with sq.connect("data.db") as con:
@@ -19,7 +20,16 @@ def create_db():
             up10 INTEGER NOT NULL DEFAULT 1
         )""")
 
-def get_money():
+def save_db():
+    with sq.connect("data.db") as con:
+        cur = con.cursor()
+
+        saves = engine.Game.save_fromGame(engine.Game)
+
+        cur.execute(f"UPDATE resources SET money = {saves[0]}")
+        cur.execute(f"UPDATE resources SET multiply = {saves[1]}")
+
+def get_money_fromDB():
     with sq.connect("data.db") as con:
         cur = con.cursor()
 
@@ -28,7 +38,7 @@ def get_money():
     for i in cur:
         return i[0]
 
-def get_multiply():
+def get_multiply_fromDB():
     with sq.connect("data.db") as con:
         cur = con.cursor()
 

@@ -1,4 +1,7 @@
 import engine
+import db_settings as db
+import time
+import os
 
 start_text = '''
 ==============================================================================
@@ -28,5 +31,10 @@ start_text = '''
 ==============================================================================
 '''
 
-def conclusion_resource():
-    print(f"\rmoney: {engine.Game._money}$ | multiply: {engine.Game._multiply} per sec")
+def conclusion_resource_fromDB():
+    os.system("cls")
+    items = db.get_items()
+    print(start_text)
+    print(f"money: {engine.Game._money}$ | multiply: {engine.Game._multiply} per sec")
+    print(f"{items[0]}\n{items[1]}\n{items[2]}\n{items[3]}\n{items[4]}\n{items[5]}\n{items[6]}\n{items[7]}\n{items[8]}")
+    time.sleep(0.0000001)

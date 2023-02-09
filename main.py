@@ -1,5 +1,6 @@
 import engine, gui_helper, db_settings
 import keyboard
+import os
 
 #hotkey functions
 def end():
@@ -22,6 +23,4 @@ keyboard.add_hotkey("ctrl + 1", test_buy)
 keyboard.add_hotkey("ctrl + 0", zeroing)
 
 #start Game
-# print(gui_helper.start_text)
 engine.Game()
-# print(engine.Game.info(engine.Game))

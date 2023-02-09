@@ -56,3 +56,33 @@ def get_items():
         for j in i:
             ret.append(j)
     return ret
+
+def plus_item(num):
+    with sq.connect("data.db") as con:
+        cur = con.cursor()
+
+        if num == 999999:
+            cur.execute(f"UPDATE resources SET up1 = 0")
+            cur.execute(f"UPDATE resources SET up2 = 0")
+            cur.execute(f"UPDATE resources SET up3 = 0")
+            cur.execute(f"UPDATE resources SET up4 = 0")
+            cur.execute(f"UPDATE resources SET up5 = 0")
+            cur.execute(f"UPDATE resources SET up6 = 0")
+            cur.execute(f"UPDATE resources SET up7 = 0")
+            cur.execute(f"UPDATE resources SET up8 = 0")
+        if num == 0:
+            cur.execute(f"UPDATE resources SET up1 = up1 + 1")
+        if num == 1:
+            cur.execute(f"UPDATE resources SET up2 = up2 + 1")
+        if num == 2:
+            cur.execute(f"UPDATE resources SET up3 = up3 + 1")
+        if num == 3:
+            cur.execute(f"UPDATE resources SET up4 = up4 + 1")
+        if num == 4:
+            cur.execute(f"UPDATE resources SET up5 = up5 + 1")
+        if num == 5:
+            cur.execute(f"UPDATE resources SET up6 = up6 + 1")
+        if num == 6:
+            cur.execute(f"UPDATE resources SET up7 = up7 + 1")
+        if num == 7:
+            cur.execute(f"UPDATE resources SET up8 = up8 + 1")

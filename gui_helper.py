@@ -1,3 +1,5 @@
+import engine
+
 start_text = '''
 ==============================================================================
                               The MorphClicker
@@ -25,3 +27,6 @@ start_text = '''
 
 ==============================================================================
 '''
+
+def conclusion_resource():
+    print(f"\rmoney: {engine.Game._money}$ | multiply: {engine.Game._multiply} per sec")

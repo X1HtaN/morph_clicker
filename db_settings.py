@@ -46,6 +46,9 @@ def get_multiply_fromDB():
     for i in cur:
         return i[0]
 
+def get_items():
+    pass
+
 # def test():
 #     with sq.connect("data.db") as con:
 #         cur = con.cursor()
